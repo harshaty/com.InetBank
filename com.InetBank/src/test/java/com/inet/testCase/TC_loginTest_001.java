@@ -10,31 +10,32 @@ import com.inet.utilities.ReadConfig;
 
 
 
-public class login1 {
+public class TC_loginTest_001 extends BaseClass{
 	
 	@Test
 	void test1() {
 		
-		WebDriver driver = new ChromeDriver();
+		    
 
 
-		    ReadConfig config = new ReadConfig();
+		   
 		    LoginPageObject lop = new LoginPageObject(driver);
-	    	String baseUrl = config.getBaseUrl();
-	    	String username = config.getUserName();
-	    	String password = config.getPassword();
-	    	String titile = config.getHomePageConfirmation();
+	    	
 	    	
 	    	// launch Firefox and direct it to the Base URL
-	    	driver.get(baseUrl);
+	    	
 
             
 		    // Enter username
-	        lop.setUserName(username);
+		    logger.info("entering the username");
+	        lop.setUserName(userName);
+	        logger.info("enterning passwords");
 	        lop.setPassword(password);
 	        lop.clickButton();
 	       String  actualTitle = driver.getTitle();
-			if (actualTitle.contains(titile)) {
+	        
+			if (actualTitle.contains
+					("Guru99 Bank Manager HomePage")) {
 					    System.out.println("Test case: Passed");
 			} 
 			else {

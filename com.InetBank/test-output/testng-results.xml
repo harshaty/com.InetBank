@@ -2,16 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-20T00:07:39 IST" name="Default suite" finished-at="2023-09-20T00:08:10 IST" duration-ms="31545">
+  <suite started-at="2023-09-21T00:15:22 IST" name="Default suite" finished-at="2023-09-21T00:15:39 IST" duration-ms="17153">
     <groups>
     </groups>
-    <test started-at="2023-09-20T00:07:39 IST" name="Default test" finished-at="2023-09-20T00:08:10 IST" duration-ms="31545">
-      <class name="com.inet.testCase.login1">
-        <test-method signature="test1()[pri:0, instance:com.inet.testCase.login1@50a638b5]" started-at="2023-09-20T00:07:39 IST" name="test1" finished-at="2023-09-20T00:08:10 IST" duration-ms="31456" status="PASS">
+    <test started-at="2023-09-21T00:15:22 IST" name="Default test" finished-at="2023-09-21T00:15:39 IST" duration-ms="17153">
+      <class name="com.inet.testCase.TC_loginTest_001">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.inet.testCase.TC_loginTest_001@6581dc0a]" started-at="2023-09-21T00:15:22 IST" name="setUp" finished-at="2023-09-21T00:15:35 IST" duration-ms="13545" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="test1()[pri:0, instance:com.inet.testCase.TC_loginTest_001@6581dc0a]" started-at="2023-09-21T00:15:35 IST" name="test1" finished-at="2023-09-21T00:15:39 IST" duration-ms="3415" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1 -->
-      </class> <!-- com.inet.testCase.login1 -->
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:com.inet.testCase.TC_loginTest_001@6581dc0a]" started-at="2023-09-21T00:15:39 IST" name="TearDown" finished-at="2023-09-21T00:15:39 IST" duration-ms="79" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TearDown -->
+      </class> <!-- com.inet.testCase.TC_loginTest_001 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
