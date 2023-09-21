@@ -1,5 +1,7 @@
 package com.inet.testCase;
 
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeMethod;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.LogManager;
 
@@ -23,6 +25,7 @@ public class BaseClass {
 	public ExtentTest report;
 	  public static final Logger logger = org.apache.logging.log4j.LogManager.getLogger(BaseClass.class.getName());
 	//@Parameter("browser")
+	@BeforeMethod
 	@BeforeClass
 	public void setUp() {
 		// as per the new version it automatically set the driver
