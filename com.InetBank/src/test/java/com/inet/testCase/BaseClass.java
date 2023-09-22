@@ -1,47 +1,71 @@
 package com.inet.testCase;
 
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeMethod;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.LogManager;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.apache.logging.log4j.Logger;
+import org.testng.annotations.Parameters;
+
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import com.inet.utilities.ReadConfig;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.commons.io.FileUtils;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class BaseClass {
 	
-	public static  WebDriver driver;
-	public ReadConfig config = new ReadConfig();
-	public String userName = config.getUserName();
-	public String password = config.getPassword();
-	public String BaseUrl = config.getBaseUrl();
+	public static WebDriver driver;
+	ReadConfig config = new ReadConfig();
+	public String username = config.getUserName();
+	public String password =config.getPassword();
+	public String url = config.getBaseUrl();
+	public static Logger  logger;
+	public ExtentTest test;
 	
-	public ExtentTest report;
-	  public static final Logger logger = org.apache.logging.log4j.LogManager.getLogger(BaseClass.class.getName());
-	//@Parameter("browser")
-	@BeforeMethod
+	
 	@BeforeClass
+	
 	public void setUp() {
-		// as per the new version it automatically set the driver
-	    driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-		driver.get(BaseUrl);
+		
+		     logger = LogManager.getLogger(BaseClass.class.getClass());
+		
+			driver = new ChromeDriver();
+			driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+			driver.get(url);
+			
+		}
 		
 		
-	}
+	
 	@AfterClass
-	public void TearDown() {
-		 driver.quit();
+	public void TearDown()  {
+		driver.quit();
+	}
+		
+	
+	public void captureScreenshot(WebDriver driver, String screenshotName) throws IOException {
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		File source = ts.getScreenshotAs(OutputType.FILE);
+		String destpath = System.getProperty("user.dir")+"/Screenshot/"+ screenshotName+".png";
+		File destination = new File(destpath);
+		FileUtils.copyFile(source,destination);
+		System.out.println("screenshot talken");
 	}
 	
-	
-	
+
 	
 
 }
