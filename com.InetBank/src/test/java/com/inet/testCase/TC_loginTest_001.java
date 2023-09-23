@@ -15,20 +15,7 @@ public class TC_loginTest_001 extends BaseClass{
 	
 	@Test
 	void test1() throws IOException {
-		
-		    
-
-
-		   
-		   
-		
-	    	
-	    	// launch Firefox and direct it to the Base URL
-	    	
-		   
-            
-		    
-		   
+   
 			LoginPageObject lp = new LoginPageObject(driver);
 			logger.info("username entered");
 			lp.setUserName(username);
@@ -38,6 +25,7 @@ public class TC_loginTest_001 extends BaseClass{
 			lp.clickButton();
 			if(driver.getTitle().equals("Guru99 Bank Manager HomePage")) {
 				Assert.assertTrue(true);
+				
 				
 			}else {
 				Alert alert = driver.switchTo().alert();

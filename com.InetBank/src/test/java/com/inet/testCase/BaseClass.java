@@ -39,9 +39,10 @@ public class BaseClass {
 	@BeforeClass
 	
 	public void setUp() {
-		
-		     logger = LogManager.getLogger(BaseClass.class.getClass());
-		
+	    System.setProperty("log4j.configurationFile", "/home/harshan/git/repository/com.InetBank/resource/log4j2.xml");
+
+        // Obtain the Logger instance for this class
+        logger = LogManager.getLogger(BaseClass.class);
 			driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 			driver.get(url);

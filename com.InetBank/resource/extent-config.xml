@@ -1,42 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extentreports>
+    <!-- Report name and document title -->
     <configuration>
-        <!-- report theme -->
-        <!-- standard, dark -->
-        <theme>dark</theme>
-    
-        <!-- document encoding -->
-        <!-- defaults to UTF-8 -->
-        <encoding>UTF-8</encoding>
-        
-        <!-- protocol for script and stylesheets -->
-        <!-- defaults to https -->
-        <protocol>https</protocol>
-        
-        <!-- title of the document -->
-        <documentTitle>Extent</documentTitle>
-        
-        <!-- report name - displayed at top-nav -->
-        <reportName>Automation Report</reportName>
-        
-        <!-- location of charts in the test view -->
-        <!-- top, bottom -->
-        <testViewChartLocation>bottom</testViewChartLocation>
-        
-        <!-- custom javascript -->
-        <scripts>
-            <![CDATA[
-                $(document).ready(function() {
-                    
-                });
-            ]]>
-        </scripts>
-        
-        <!-- custom styles -->
-        <styles>
-            <![CDATA[
-                
-            ]]>
-        </styles>
+        <documentTitle>My Test Automation Report</documentTitle>
+        <reportName>My Extent Report</reportName>
     </configuration>
+
+    <!-- Themes: standard, dark, or default -->
+    <themes>
+        <theme>dark</theme>
+    </themes>
+
+    <!-- Encoding for the report -->
+    <encoding>UTF-8</encoding>
+
+    <!-- Report start time (optional) -->
+    <startTime>Start Time: {0}</startTime>
+
+    <!-- Report logo (optional) -->
+    <logo>path/to/your/logo.png</logo>
+
+    <!-- Customize the system information in the footer (optional) -->
+    <systemInfo>
+        <parameter>
+            <name>Environment</name>
+            <value>Production</value>
+        </parameter>
+        <parameter>
+            <name>Browser</name>
+            <value>Chrome</value>
+        </parameter>
+    </systemInfo>
+
+    <!-- Configuration for test status representations -->
+    <statusDisplay>
+        <displaySuccesses>true</displaySuccesses>
+        <displayFailures>true</displayFailures>
+        <displayPending>false</displayPending>
+    </statusDisplay>
+
+    <!-- Report sections (test, step, etc.) -->
+    <reportName>My Extent Report</reportName>
+    <offlineMode>false</offlineMode>
+    <testViewChartLocation>top</testViewChartLocation>
+    <testViewChart>modern</testViewChart>
+
+    <!-- Dashboard view (optional) -->
+    <dashboardView>
+        <widgets>
+            <widget name="Test Overview">
+                <count>true</count>
+                <tabs>
+                    <tab name="Pass"><status>pass</status></tab>
+                    <tab name="Fail"><status>fail</status></tab>
+                </tabs>
+            </widget>
+            <widget name="Category Chart">
+                <count>true</count>
+            </widget>
+        </widgets>
+    </dashboardView>
+
+    <!-- Report file location -->
+    <filePath>test-output/ExtentReport.html</filePath>
 </extentreports>

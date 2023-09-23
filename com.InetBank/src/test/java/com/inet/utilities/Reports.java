@@ -18,12 +18,10 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 public class Reports extends TestListenerAdapter{
 
-	private ExtentReports extent;
-	private ExtentTest test;
-	
 	
 		
-		 
+		   private ExtentReports extent;
+		   private ExtentTest test;
 		   
 			
 			
@@ -31,6 +29,7 @@ public class Reports extends TestListenerAdapter{
 		public void onStart(ITestContext testContext) {
 			String timeStamp = new SimpleDateFormat("yyy.MM.dd.HH.mm.ss").format(new Date());
 		    String repName ="Test-Report"+timeStamp+".html";
+			@SuppressWarnings("deprecation")
 			ExtentHtmlReporter htmlreport = new ExtentHtmlReporter(repName);
 			extent = new ExtentReports();
 		    final  File file = new File("resource/extent-config.xml");
@@ -73,5 +72,4 @@ public class Reports extends TestListenerAdapter{
 		public void onFinish(ITestContext testContext) {
 			extent.flush();
 		}
-
-		}
+}
