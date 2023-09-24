@@ -51,7 +51,7 @@ public class TC_loginTest_002 extends BaseClass{
 	     if(isAleartpresent() == true) {
 	    	 driver.switchTo().alert().accept();
 	    	 driver.switchTo().defaultContent();
-	    	 Assert.assertTrue(false);
+	    	 Assert.assertFalse(true);
 	    	 logger.fatal("invalid user and password"+ usr );
 	     }else {
 	    	 Assert.assertTrue(true);
