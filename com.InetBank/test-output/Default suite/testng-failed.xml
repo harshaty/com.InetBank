@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.inet.testCase.TC_loginTest_001">
+      <class name="com.inet.testCase.TC_loginTest_002">
         <methods>
           <include name="setUp"/>
-          <include name="test1"/>
+          <include name="LoginDDT" invocation-numbers="1 2 3"/>
           <include name="TearDown"/>
         </methods>
-      </class> <!-- com.inet.testCase.TC_loginTest_001 -->
+      </class> <!-- com.inet.testCase.TC_loginTest_002 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

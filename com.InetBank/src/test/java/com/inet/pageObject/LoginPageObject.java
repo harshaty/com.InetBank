@@ -27,6 +27,11 @@ public class LoginPageObject {
 	@CacheLookup
 	WebElement btnLogin;
 	
+	@FindBy(xpath ="//a[text()='Log out']")
+	@CacheLookup
+	WebElement logout;
+	
+	
 	
 	
 	
@@ -38,6 +43,9 @@ public class LoginPageObject {
 	}
 	public void clickButton() {
 		btnLogin.click();
+	}
+	public void ClickLogout() {
+		logout.click();
 	}
 
 }

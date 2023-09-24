@@ -33,5 +33,9 @@ public class ReadConfig {
 		String  homePage = pro.getProperty("EXPECT_TITLE");
 		return homePage;
 	}
+	public String getEroroMsg() {
+		String eror = pro.getProperty("EXPECT_ERROR");
+		return eror;
+	}
 
 }

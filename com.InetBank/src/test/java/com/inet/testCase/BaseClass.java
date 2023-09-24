@@ -39,31 +39,25 @@ public class BaseClass {
 	@BeforeClass
 	
 	public void setUp() {
-<<<<<<< HEAD
+
 	    System.setProperty("log4j.configurationFile", "/home/harshan/git/repository/com.InetBank/resource/log4j2.xml");
 
         // Obtain the Logger instance for this class
-        logger = LogManager.getLogger(BaseClass.class);
+           logger = LogManager.getLogger(BaseClass.class);
 			driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 			driver.get(url);
 			
-		}
-=======
->>>>>>> 67952964a7bfd36262abad7b722635cb29759035
 		
-		     logger = LogManager.getLogger(BaseClass.class.getClass());
+
 		
-<<<<<<< HEAD
-=======
-			driver = new ChromeDriver();
-			driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-			driver.get(url);
-			
-		}
+
+
+				}
 		
 		
->>>>>>> 67952964a7bfd36262abad7b722635cb29759035
+		
+
 	
 	@AfterClass
 	public void TearDown()  {

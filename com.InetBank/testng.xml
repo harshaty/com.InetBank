@@ -6,8 +6,8 @@
 	</listeners>
   <test thread-count="5" name="Test" >
     <classes>
-      <class name="com.inet.testCase.TC_loginTest_001"/>
-     
+      
+      <class name="com.inet.testCase.TC_loginTest_002"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

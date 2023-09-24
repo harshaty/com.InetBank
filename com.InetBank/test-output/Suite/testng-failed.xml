@@ -6,6 +6,13 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
+      <class name="com.inet.testCase.TC_loginTest_002">
+        <methods>
+          <include name="setUp"/>
+          <include name="LoginDDT"/>
+          <include name="TearDown"/>
+        </methods>
+      </class> <!-- com.inet.testCase.TC_loginTest_002 -->
       <class name="com.inet.testCase.TC_loginTest_001">
         <methods>
           <include name="setUp"/>
