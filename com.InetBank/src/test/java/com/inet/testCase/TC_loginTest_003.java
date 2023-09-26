@@ -1,5 +1,8 @@
 package com.inet.testCase;
 
+import java.io.IOException;
+
+import org.openqa.selenium.Alert;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -25,7 +28,7 @@ public class TC_loginTest_003 extends BaseClass {
 		
 	}
 	@Test(dataProvider = "GuruTest")
-	public void LoginDDT(String usr, String psw) throws InterruptedException {
+	public void LoginDDT(String usr, String psw) throws InterruptedException, IOException {
 		
         
 	     LoginPageObject lp = new  LoginPageObject (driver);
@@ -34,19 +37,32 @@ public class TC_loginTest_003 extends BaseClass {
 	     logger.info("entering the password");
 	     lp.setPassword(psw);
 	     logger.info("click button");
-	     lp.clickButton();
+	     lp.clickButton();	
 	     Thread.sleep(3000);
+	     
 	     if(isAleartpresent() == true) {
-	    	 driver.switchTo().alert().accept();
+	    	 
+	    	
+	    	 Alert alert = driver.switchTo().alert();
+	         alert.accept();
+	    	 
+	    	
+	    	
 	    	 driver.switchTo().defaultContent();
+	    	 captureScreenshot(driver, "invalid");
 	    	 Assert.assertFalse(true);
+	    	
 	    	 logger.fatal("invalid user and password"+ usr );
+	    	
 	     }else {
+	    	 
 	    	 Assert.assertTrue(true);
+	    	
 	    	 lp.ClickLogout();
 	    	 Thread.sleep(3000);
 	    	 driver.switchTo().alert().accept();
 	    	 driver.switchTo().defaultContent();
+	    	 
 	     }
 	}
 	public boolean isAleartpresent() {

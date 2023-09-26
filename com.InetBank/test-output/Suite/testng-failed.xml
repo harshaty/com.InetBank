@@ -9,7 +9,7 @@
       <class name="com.inet.testCase.TC_loginTest_002">
         <methods>
           <include name="setUp"/>
-          <include name="LoginDDT" invocation-numbers="1 2 3"/>
+          <include name="LoginDDT" invocation-numbers="0 1 2 3"/>
           <include name="TearDown"/>
         </methods>
       </class> <!-- com.inet.testCase.TC_loginTest_002 -->

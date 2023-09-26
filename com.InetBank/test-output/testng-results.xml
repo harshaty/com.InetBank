@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="1" failed="3" skipped="0">
+<testng-results ignored="0" total="4" passed="0" failed="4" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-25T00:02:45 IST" name="Default suite" finished-at="2023-09-25T00:03:26 IST" duration-ms="40898">
+  <suite started-at="2023-09-26T23:32:52 IST" name="Suite" finished-at="2023-09-26T23:33:36 IST" duration-ms="43702">
     <groups>
     </groups>
-    <test started-at="2023-09-25T00:02:45 IST" name="Default test" finished-at="2023-09-25T00:03:26 IST" duration-ms="40898">
-      <class name="com.inet.testCase.TC_loginTest_003">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.inet.testCase.TC_loginTest_003@661972b0]" started-at="2023-09-25T00:02:45 IST" name="setUp" finished-at="2023-09-25T00:02:55 IST" duration-ms="9577" status="PASS">
+    <test started-at="2023-09-26T23:32:52 IST" name="Test" finished-at="2023-09-26T23:33:36 IST" duration-ms="43702">
+      <class name="com.inet.testCase.TC_loginTest_002">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.inet.testCase.TC_loginTest_002@4466af20]" started-at="2023-09-26T23:32:52 IST" name="setUp" finished-at="2023-09-26T23:33:02 IST" duration-ms="10058" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="LoginDDT(java.lang.String,java.lang.String)[pri:0, instance:com.inet.testCase.TC_loginTest_003@661972b0]" started-at="2023-09-25T00:02:55 IST" name="LoginDDT" data-provider="GuruTest" finished-at="2023-09-25T00:03:08 IST" duration-ms="12840" status="PASS">
+        <test-method signature="LoginDDT(java.lang.String,java.lang.String)[pri:0, instance:com.inet.testCase.TC_loginTest_002@4466af20]" started-at="2023-09-26T23:33:03 IST" name="LoginDDT" data-provider="LoginData" finished-at="2023-09-26T23:33:12 IST" duration-ms="9003" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -24,19 +24,79 @@
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.UnhandledAlertException">
+            <message>
+              <![CDATA[unexpected alert open: {Alert text : You Have Succesfully Logged Out!!}
+  (Session info: chrome=117.0.5938.88): You Have Succesfully Logged Out!!
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '4.18.0-15-generic', java.version: '20.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6adab5d120d143e1771bd9d05f80b33d, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.88, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:39211}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:39211/devtoo..., se:cdpVersion: 117.0.5938.88, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6adab5d120d143e1771bd9d05f80b33d]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : You Have Succesfully Logged Out!!}
+  (Session info: chrome=117.0.5938.88): You Have Succesfully Logged Out!!
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '4.18.0-15-generic', java.version: '20.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6adab5d120d143e1771bd9d05f80b33d, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.88, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:39211}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:39211/devtoo..., se:cdpVersion: 117.0.5938.88, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6adab5d120d143e1771bd9d05f80b33d
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:131)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:591)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
+at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:321)
+at com.inet.testCase.BaseClass.captureScreenshot(BaseClass.java:81)
+at com.inet.testCase.TC_loginTest_002.LoginDDT(TC_loginTest_002.java:93)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.UnhandledAlertException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginDDT -->
-        <test-method signature="LoginDDT(java.lang.String,java.lang.String)[pri:0, instance:com.inet.testCase.TC_loginTest_003@661972b0]" started-at="2023-09-25T00:03:08 IST" name="LoginDDT" data-provider="GuruTest" finished-at="2023-09-25T00:03:13 IST" duration-ms="5759" status="FAIL">
+        <test-method signature="LoginDDT(java.lang.String,java.lang.String)[pri:0, instance:com.inet.testCase.TC_loginTest_002@4466af20]" started-at="2023-09-26T23:33:12 IST" name="LoginDDT" data-provider="LoginData" finished-at="2023-09-26T23:33:22 IST" duration-ms="9163" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[invalid]]>
+                <![CDATA[prajna]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[valid]]>
+                <![CDATA[EmyqUpE]]>
               </value>
             </param>
           </params>
@@ -50,7 +110,7 @@ at org.testng.Assert.fail(Assert.java:111)
 at org.testng.Assert.failNotEquals(Assert.java:1578)
 at org.testng.Assert.assertFalse(Assert.java:79)
 at org.testng.Assert.assertFalse(Assert.java:89)
-at com.inet.testCase.TC_loginTest_003.LoginDDT(TC_loginTest_003.java:42)
+at com.inet.testCase.TC_loginTest_002.LoginDDT(TC_loginTest_002.java:77)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -83,16 +143,16 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginDDT -->
-        <test-method signature="LoginDDT(java.lang.String,java.lang.String)[pri:0, instance:com.inet.testCase.TC_loginTest_003@661972b0]" started-at="2023-09-25T00:03:13 IST" name="LoginDDT" data-provider="GuruTest" finished-at="2023-09-25T00:03:20 IST" duration-ms="6040" status="FAIL">
+        <test-method signature="LoginDDT(java.lang.String,java.lang.String)[pri:0, instance:com.inet.testCase.TC_loginTest_002@4466af20]" started-at="2023-09-26T23:33:22 IST" name="LoginDDT" data-provider="LoginData" finished-at="2023-09-26T23:33:28 IST" duration-ms="6157" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[valid]]>
+                <![CDATA[mngr528737]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[invalid]]>
+                <![CDATA[prex1jna123]]>
               </value>
             </param>
           </params>
@@ -106,7 +166,7 @@ at org.testng.Assert.fail(Assert.java:111)
 at org.testng.Assert.failNotEquals(Assert.java:1578)
 at org.testng.Assert.assertFalse(Assert.java:79)
 at org.testng.Assert.assertFalse(Assert.java:89)
-at com.inet.testCase.TC_loginTest_003.LoginDDT(TC_loginTest_003.java:42)
+at com.inet.testCase.TC_loginTest_002.LoginDDT(TC_loginTest_002.java:77)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -139,16 +199,16 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginDDT -->
-        <test-method signature="LoginDDT(java.lang.String,java.lang.String)[pri:0, instance:com.inet.testCase.TC_loginTest_003@661972b0]" started-at="2023-09-25T00:03:20 IST" name="LoginDDT" data-provider="GuruTest" finished-at="2023-09-25T00:03:26 IST" duration-ms="6274" status="FAIL">
+        <test-method signature="LoginDDT(java.lang.String,java.lang.String)[pri:0, instance:com.inet.testCase.TC_loginTest_002@4466af20]" started-at="2023-09-26T23:33:28 IST" name="LoginDDT" data-provider="LoginData" finished-at="2023-09-26T23:33:35 IST" duration-ms="7321" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[invalid]]>
+                <![CDATA[prathiksha]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[invalid]]>
+                <![CDATA[pex2rathiksha]]>
               </value>
             </param>
           </params>
@@ -162,7 +222,7 @@ at org.testng.Assert.fail(Assert.java:111)
 at org.testng.Assert.failNotEquals(Assert.java:1578)
 at org.testng.Assert.assertFalse(Assert.java:79)
 at org.testng.Assert.assertFalse(Assert.java:89)
-at com.inet.testCase.TC_loginTest_003.LoginDDT(TC_loginTest_003.java:42)
+at com.inet.testCase.TC_loginTest_002.LoginDDT(TC_loginTest_002.java:77)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -195,11 +255,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginDDT -->
-        <test-method is-config="true" signature="TearDown()[pri:0, instance:com.inet.testCase.TC_loginTest_003@661972b0]" started-at="2023-09-25T00:03:26 IST" name="TearDown" finished-at="2023-09-25T00:03:26 IST" duration-ms="246" status="PASS">
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:com.inet.testCase.TC_loginTest_002@4466af20]" started-at="2023-09-26T23:33:35 IST" name="TearDown" finished-at="2023-09-26T23:33:36 IST" duration-ms="667" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TearDown -->
-      </class> <!-- com.inet.testCase.TC_loginTest_003 -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- com.inet.testCase.TC_loginTest_002 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

@@ -1,7 +1,10 @@
 package com.inet.testCase;
 
+
 import java.io.IOException;
 
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -10,6 +13,7 @@ import com.inet.pageObject.LoginPageObject;
 import com.inet.utilities.xLUtils;
 
 public class TC_loginTest_002 extends BaseClass{
+	 Alert alert ;
 	
 	public boolean isAleartpresent() {
 		try {
@@ -37,7 +41,7 @@ public class TC_loginTest_002 extends BaseClass{
 	}
 	
 	@Test(dataProvider = "LoginData")
-	public void LoginDDT(String usr, String psw) throws InterruptedException {
+	public void LoginDDT(String usr, String psw) throws InterruptedException, IOException {
 		
         
 	     LoginPageObject lp = new LoginPageObject(driver);
@@ -48,14 +52,46 @@ public class TC_loginTest_002 extends BaseClass{
 	     logger.info("click button");
 	     lp.clickButton();
 	     Thread.sleep(3000);
-	     if(isAleartpresent() == true) {
-	    	 driver.switchTo().alert().accept();
-	    	 driver.switchTo().defaultContent();
-	    	 Assert.assertFalse(true);
-	    	 logger.fatal("invalid user and password"+ usr );
+	     if (isAleartpresent()) {
+	    		
+	    	 
+	    	    try {
+	    	        // Capture a screenshot of the alert dialog
+	    	       
+	    	        // Switch to the alert
+	    	    	
+	    	         driver.switchTo().alert().accept();
+	    	        
+	    	        // Get the text of the alert (optional, for logging purposes)
+	    	      
+	    	        captureScreenshot(driver, "invalid");
+	    	        // Accept the alert (you can dismiss it if needed)
+	    	       
+	    	        
+	    	        // Switch back to the default content (optional, if needed)
+	    	        driver.switchTo().defaultContent();
+	    	    } catch (Exception e) {
+	    	        System.out.println("Unable to take screenshot or handle alert: " + e.getMessage());
+	    	        captureScreenshot(driver, "alert_screenshot");   	    }
+
+	    	    // Your assertion or other test logic here
+	    	    Assert.assertFalse(true);
+	    	    logger.fatal("Invalid user and password: " + usr);
+	    	
+	    	
+
+
+
+
+
+	    	
 	     }else {
+	    	
 	    	 Assert.assertTrue(true);
 	    	 lp.ClickLogout();
+	    	
+	    	 Thread.sleep(3000);
+	    	 captureScreenshot(driver, "logout_log");
 	    	 Thread.sleep(3000);
 	    	 driver.switchTo().alert().accept();
 	    	 driver.switchTo().defaultContent();

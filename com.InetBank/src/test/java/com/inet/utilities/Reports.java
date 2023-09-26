@@ -5,12 +5,14 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.openqa.selenium.remote.http.WebSocket.Listener;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
@@ -23,8 +25,10 @@ public class Reports extends TestListenerAdapter{
 		
 		   private ExtentReports extent;
 		   private ExtentTest test;
-
-		   
+		   private static String screenshotName;
+		   public static void setScreenshotName(String name) {
+		        screenshotName = name;
+		    }
 			
 			
 
@@ -55,19 +59,38 @@ public class Reports extends TestListenerAdapter{
 			
 		}
 		public void onTestFailure(ITestResult tr)   {
+            String name = screenshotName;
 			test.log(Status.FAIL,MarkupHelper.createLabel(tr.getName(),ExtentColor.RED));
 			
-			String screeshotPath = System.getProperty("user.dir") + File.separator + "Screenshot" + File.separator + tr.getName() + ".png";
-		    
-			File f = new File(screeshotPath);
 			
-		    if(f.exists() && f.isDirectory()) {
-		    	try {
-		    		test.fail("Screenshot is below:\n"+test.addScreenCaptureFromPath(screeshotPath));
-		    		
-		    	}catch(IOException e) {
-		    		e.printStackTrace();
-		    	}
+			String screenshotPath =	System.getProperty("user.dir")+"/Screenshot/"+  name +".png";
+
+			File f = new File(screenshotPath);
+
+			// Verify the screenshot path
+			System.out.println("Screenshot Path: " + screenshotPath);
+
+			if (f.exists() && !f.isDirectory()) {
+			    try {
+			        // Ensure that 'test' is not null and the test is started
+			        if (test != null) {
+			        	test.fail("Screenshot is below:", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+
+			        } else {
+			            System.err.println("Extent test instance is not initialized.");
+			        }
+			    } catch (IOException e) {
+			        // Log the exception details
+			        e.printStackTrace();
+			    }
+			} else {
+			    System.err.println("Screenshot file does not exist: " + screenshotPath);
+			
+
+
+
+
+
 		    }
 			
 		}

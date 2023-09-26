@@ -1,7 +1,1 @@
-00:03:08.583 [main] INFO  com.inet.testCase.BaseClass - click button
-00:03:13.970 [main] INFO  com.inet.testCase.BaseClass - entering the username
-00:03:14.449 [main] INFO  com.inet.testCase.BaseClass - entering the password
-00:03:14.620 [main] INFO  com.inet.testCase.BaseClass - click button
-00:03:20.040 [main] INFO  com.inet.testCase.BaseClass - entering the username
-00:03:20.669 [main] INFO  com.inet.testCase.BaseClass - entering the password
-00:03:20.841 [main] INFO  com.inet.testCase.BaseClass - click button
+23:33:28.649 [main] INFO  com.inet.testCase.BaseClass - click button
